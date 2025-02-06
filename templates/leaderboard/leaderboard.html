@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/leaderboard/leaderboard.css">
+    <link rel="icon" href="static/asset/img/logo/icon.png"/>
+    <script src="static/leaderboard/leaderboard.js" defer></script>
+    <link rel="apple-touch-icon" href="static/asset/img/logo/icon.png"/> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임페리움 야생 서버 인기도 순위</title>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div class="container">
+        <div class="content">
+            <ul class="taskbar">
+                <li class="line" onclick="location.href='index.html'>
+                <img src="static/asset/img/logo/icon.png">
+                </li>
+                <li class="line">
+                    <div class="menu">
+                        <div class="visible" key="0">
+                            <h2 class="taskbar_1">
+                                <a href="..">메인</a>
+                            </h2>
+                            
+                            <h2 class="hidden" key="0">
+                                <a href="leaderboard" class="taskbar_1">리더보드</a>
+                            </h2>
+                            <h2 class="hidden" key="0">
+                                <a href="build_ranking" class="taskbar_1">건물 순위</a>
+                            </h2>
+                            
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="visible" key="1">
+                            <h2 class="taskbar_1">
+                                <a href="">전시실</a>
+                            </h2>
+                            
+                            <h2 class="hidden" key="1">
+                                <a href="gallery">갤러리</a>
+                            </h2>
+                            
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="visible" key="2">
+                            <h2 class="taskbar_1">
+                                <a href="">이서버란</a>
+                            </h2>
+                            
+                            <h2 class="hidden" key="2">
+                                <a href="description" class="taskbar_1">설명</a>
+                            </h2>
+                            <h2 class="hidden" key="2">
+                                <a href="rules" class="taskbar_1">규칙</a>
+                            </h2>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content2">
+            <h1>현재 BETA 버전입니다!</h1>
+            <ol>
+                {% for player in players %}
+                <li><div>
+                    이름 : {{ player.nickname }}
+                </div>
+                <div>
+                    점수 : {{ player.point }}
+                </div>
+                <div>
+                    티어 : {{ player.tier }}
+                </div></li>
+                <p></p>
+                {% endfor %}
+            </ol>
+        </div>
+        
+    </div>
+</body>
+</html>

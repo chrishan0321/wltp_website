@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'establishRetrosansOTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'establishRetrosansOTF';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(98, 194, 58);
+    /* background-image : url('배경３.png');
+    background-repeat : repeat; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(27, 158, 9, 0.7);
+    position: sticky;
+    top: 0;
+}
+
+.content2 {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.taskbar {
+    list-style:none;
+    padding-left:0px;
+    display: inline-block;
+    white-space: normal;
+    list-style: none;
+    
+}
+
+.line {
+    float: left;
+    margin-right: 20px;
+}
+
+.taskbar_2 {
+    text-decoration: none;
+}
+a:link {
+    color : black;
+  }
+a:visited {
+    color : black;
+  }
+a:hover {
+    color : black;
+  }
+a:active {
+    color : black;
+  }
+
+  .line {
+    float: left;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.taskbar_1 a , .hidden a{
+    text-decoration: none;
+}
+
+h2{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu {
+    display: flex ;
+    flex-direction: column;    
+    margin-right: 20px;
+    z-index: 999;
+}
+
+.visible{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.hidden{
+    display: none;
+    background-color: rgb(255, 255, 255, 0.5);
+    width: 120px;
+    height: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.taskbar_1{
+    width: 120px;
+    height: 50px !important;
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.taskbar_1:hover{
+    background-color: rgb(98, 192, 57, 0.5);
+}
+
+.hidden:hover{
+    background-color: rgb(98, 192, 57, 0.5);
+}
