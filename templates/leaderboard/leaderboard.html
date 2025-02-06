@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="static/asset/img/logo/icon.png"/> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>임페리움 야생 서버 인기도 순위</title>
+    <title>임페리움 야생 서버 건축 실력 순위</title>
 </head>
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
     <div class="container">
@@ -60,15 +60,21 @@
                             
                         </div>
                     </div>
+                    <div class="menu">
+                        <h2 class="taskbar_1">
+                            <a href="login">로그인</a>
+                        </h2>
+                    </div>
                 </li>
             </ul>
         </div>
         <div class="content2">
             <h1>현재 BETA 버전입니다!</h1>
+            <h2>임페리움 야생 서버 건축 실력 순위</h2>
             <ol>
                 {% for player in players %}
                 <li><div>
-                    이름 : {{ player.nickname }}
+                    닉네임 : {{ player.nickname }}
                 </div>
                 <div>
                     점수 : {{ player.point }}

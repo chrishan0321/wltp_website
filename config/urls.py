@@ -22,7 +22,7 @@ from description.views import description_main
 from gallery.views import gallery_main
 from rule.views import rule_main
 from build_ranking.views import build_ranking_main
-
+from account.views import account_main
 
 urlpatterns = [
     path('wltpwltp', admin.site.urls),
@@ -32,4 +32,5 @@ urlpatterns = [
     path('gallery', gallery_main),
     path('rules', rule_main),
     path('build_ranking', build_ranking_main),
+    path('login', account_main)
 ]

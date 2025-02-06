@@ -4,7 +4,7 @@ from django.db import models
 class Player(models.Model):
     nickname = models.CharField(max_length=255)
     real_name = models.CharField(max_length=255)
-    point = models.IntegerField(default=0)
+    point = models.CharField(max_length=255)
     rank = models.IntegerField(default=0)
     tier = models.CharField(max_length=255, null=True, blank=True)
     
