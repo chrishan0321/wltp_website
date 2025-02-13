@@ -15,22 +15,41 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from django.shortcuts import redirect
+
 from main.views import main_main
-from leaderboard.views import leaderboard_main
 from description.views import description_main
 from gallery.views import gallery_main
 from rule.views import rule_main
 from build_ranking.views import build_ranking_main
+from building_ranking.views import building_ranking_main
+from redstone_ranking.views import redstone_ranking_main
+from command_ranking.views import command_ranking_main
 from account.views import account_main
 
+
+
+
 urlpatterns = [
-    path('wltpwltp', admin.site.urls),
-    path('', main_main),
-    path('leaderboard', leaderboard_main),
-    path('description', description_main),
-    path('gallery', gallery_main),
-    path('rules', rule_main),
-    path('build_ranking', build_ranking_main),
-    path('login', account_main)
+    path('wltpwltp/', admin.site.urls),  # 관리자 페이지
+    path('', main_main, name='main'),  # 메인 페이지
+    path('building_ranking/', building_ranking_main, name='building_ranking'),
+    path('description/', description_main, name='description'),
+    path('gallery/', gallery_main, name='gallery'),
+    path('rules/', rule_main, name='rules'),
+    path('build_ranking/', build_ranking_main, name='build_ranking'),
+    path('redstone_ranking/', redstone_ranking_main, name='redstone_ranking'),
+    path('command_ranking/', command_ranking_main, name='command_ranking'),
+    path('account/', include("account.urls")),  # account 앱 포함
 ]
+
+
+def redirect_to_main(request, exception):
+    return redirect("main")
+
+handler404 = redirect_to_main
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -23,20 +23,20 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 SECRET_KEY = 'django-insecure-q1m3p96*)^u*6+3zfosowgos2=hrt!(4@0l^dd&7(v*5m(e-#4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
 INSTALLED_APPS = [
     'main',
     'rule',
-    'leaderboard',
+    'build_ranking',
+    'building_ranking',
+    'redstone_ranking',
+    'command_ranking',
     'gallery',
     'description',
-    'build_ranking',
     'account',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,3 +131,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+LOGIN_REDIRECT_URL = '/'
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'
+
+EMAIL_HOST = 'smtp.gmail.com' 		 # 메일 호스트 서버
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'hant20110321@gmail.com' 	 # 우리가 사용할 Gmail
+EMAIL_HOST_PASSWORD = 'kylf oolk mbql muof'		 # 우리가 사용할 Gmail p
+EMAIL_USE_TLS = True			 # TLS 보안 설정
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER	 # 응답 메일 관련 설정
