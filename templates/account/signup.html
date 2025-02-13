@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content2">
+    <form method="POST" action="{% url 'account:signup'%}">
+    {% csrf_token %}
+    {% include "account/form_errors.html" %}
+    ID:
+    <br>
+    <input name="username" type="text" value="{{ form.username.value|default_if_none:'' }}">
+    <br>
+    이메일 (회원가입후 이메일을 확인해주세요):
+    <br>
+    <input name="email" type="email" value="{{ form.email.value|default_if_none:'' }}">
+    <br>
+    비밀번호:
+    <br>
+    <input name="password1" type="password" value="{{ form.password1.value|default_if_none:'' }}">
+    <br>
+    비밀번호 확인:
+    <br>
+    <input name="password2" type="password" value="{{ form.password2.value|default_if_none:'' }}">
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Sign Up!">
+</form>
+</div>
+
+
+{% endblock %}

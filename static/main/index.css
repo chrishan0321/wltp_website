@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'establishRetrosansOTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes bounceScale {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(0px); /* 살짝 커지고 위로 튐 */
+    }
+}
+
+
+* {
+    font-size: 24px;
+    font-family: 'establishRetrosansOTF';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    margin-bottom: 5px;
+}
+
+img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.content3 {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(128, 161, 250);
+}
+
+
+.content2 {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+}
+
+.player {
+    float: left;
+}
+/*a*/
+
+a {
+    text-decoration-line: none;
+    display: block;
+}
+
+a:link {
+    color : black;
+}
+
+a:visited {
+    color : black;
+}
+
+a:hover {
+    color : black;
+}
+
+a:active {
+    color : black;
+}
+
+li {
+    min-width: 100px; /* 최소 크기 설정 */
+            flex: 1; /* 가능한 공간 차지 */
+}
+
+.taskbar-ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style-position: inside;
+}
+
+/*hidden*/
+
+.hidden {
+    text-align: center;
+    background-color: rgba(185, 185, 185, 0.5);
+    height: auto;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden:hover {
+    animation: bounceScale 0.5s ease-in-out;
+}
+
+
+.last_hidden {
+    text-align: center;
+    background-color: rgba(185, 185, 185, 0.5);
+    height: auto;
+    display: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.last_hidden:hover {
+    border-radius: 0px 0px 10px 10px;
+    animation: bounceScale 0.5s ease-in-out;
+}
+
+
+/*menus*/
+
+.title_menu {
+    border-radius: 10px;
+    background-color: rgba(185, 185, 185, 0.5);
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.title_menu:hover {
+    border-radius: 10px 10px 0px 0px;
+    animation: bounceScale 0.5s ease-in-out;
+}
+
+.menu:hover {
+    animation: bounceScale 0.5s ease-in-out;
+}
+
+.menu {
+    border-radius: 10px;
+    background-color: rgba(185, 185, 185, 0.5);
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*containers*/
+.taskbar-container {
+    justify-content: center;
+    display: grid;
+    background-color: rgba(185, 185, 185, 0.5);
+    gap: 10px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.visible {
+    width: 150px;
+    margin: 40px;
+}
+
+.hamburger {
+    display: none;
+    position: fixed;
+}
+
+
+@media screen and (max-width: 768px) {
+    .taskbar-container {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(185, 185, 185, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .taskbar-container.active {
+        display: flex;
+        position: fixed;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        display: block;
+        position: sticky;
+        top: 20px;
+        left: 20px;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hidden {
+        display: flex;
+    }
+
+    .last_hidden {
+        display: flex;
+    }
+}
+
+
