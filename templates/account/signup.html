@@ -8,20 +8,24 @@
     <br>
     <input name="username" type="text" value="{{ form.username.value|default_if_none:'' }}">
     <br>
-    이메일 (회원가입후 이메일을 확인해주세요):
+    이메일 :
     <br>
     <input name="email" type="email" value="{{ form.email.value|default_if_none:'' }}">
     <br>
-    비밀번호:
+    마인크래프트 닉네임 :
+    <br>
+    <input name="nickname" type="text" value="{{ form.first_name.value|default_if_none:'' }}">
+    <br>
+    비밀번호 :
     <br>
     <input name="password1" type="password" value="{{ form.password1.value|default_if_none:'' }}">
     <br>
-    비밀번호 확인:
+    비밀번호 확인 :
     <br>
     <input name="password2" type="password" value="{{ form.password2.value|default_if_none:'' }}">
     <br>
     <br>
-    <input class="btn btn-primary" type="submit" value="Sign Up!">
+    <input class="btn btn-primary" type="submit" value="회원가입">
 </form>
 </div>
 

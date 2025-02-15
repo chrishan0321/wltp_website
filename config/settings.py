@@ -36,10 +36,9 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q1m3p96*)^u*6+3zfosowgos2=hrt!(4@0l^dd&7(v*5m(e-#4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -146,6 +145,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOCALE_PATHS = (BASE_DIR / "locale",)
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 LOGIN_REDIRECT_URL = '/'
@@ -155,6 +155,6 @@ MEDIA_URL = '/media/'
 EMAIL_HOST = 'smtp.gmail.com' 		 # 메일 호스트 서버
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'hant20110321@gmail.com' 	 # 우리가 사용할 Gmail
-EMAIL_HOST_PASSWORD = 'kylf oolk mbql muof'		 # 우리가 사용할 Gmail p
+EMAIL_HOST_PASSWORD = get_secret("SMTP_KEY")		 # 우리가 사용할 Gmail p
 EMAIL_USE_TLS = True			 # TLS 보안 설정
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER	 # 응답 메일 관련 설정
